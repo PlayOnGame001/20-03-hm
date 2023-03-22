@@ -12,52 +12,52 @@ namespace _20_03_hm
     }
     class Truck : Transport
     {
-        public double fuel_consumption;
-        public double deliver_price;
-        public double distance;
+        public double toplivo;
+        public double dostavka_prica;
+        public double doroga;
 
         public Truck() { }
-        public Truck(double fuel_consumption, double deliver_price, double distance)
+        public Truck(double toplivo, double dostavka_prica, double doroga)
         {
-            this.fuel_consumption = fuel_consumption;
-            this.deliver_price = deliver_price;
-            this.distance = distance;
+            this.toplivo = toplivo;
+            this.dostavka_prica = dostavka_prica;
+            this.doroga = doroga;
         }
         public void Deliver()
         {
-            Console.Write("Enter fuel consumption: ");
+            Console.Write("Ведите количество топлива: ");
             string fl = Console.ReadLine();
-            fuel_consumption = Convert.ToDouble(fl);
-            Console.Write("Enter distance: ");
+            toplivo = Convert.ToDouble(fl);
+            Console.Write("Введите дистанцию: ");
             string d = Console.ReadLine();
-            distance = Convert.ToDouble(d);
-            deliver_price = 0.05 * distance;
-            Console.WriteLine($"Delivered by truck\nPrice: {deliver_price} euro");
+            doroga = Convert.ToDouble(d);
+            dostavka_prica = 0.05 * doroga;
+            Console.WriteLine($"Доставка на грузовике\nЦена: {dostavka_prica} в евро");
         }
     }
     class Ship : Transport
     {
-        public double fuel_consumption;
-        public double deliver_price;
-        public double distance;
+        public double toplivo;
+        public double dostavka_prica;
+        public double doroga;
 
         public Ship() { }
-        public Ship(double fuel_consumption, double deliver_price, double distance)
+        public Ship(double toplivo, double dostavka_prica, double doroga)
         {
-            this.fuel_consumption = fuel_consumption;
-            this.deliver_price = deliver_price;
-            this.distance = distance;
+            this.toplivo = toplivo;
+            this.dostavka_prica = dostavka_prica;
+            this.doroga = doroga;
         }
         public void Deliver()
         {
-            Console.Write("Enter fuel consumption: ");
+            Console.Write("Введите количество топлива: ");
             string fl = Console.ReadLine();
-            fuel_consumption = Convert.ToDouble(fl);
-            Console.Write("Enter distance: ");
+            toplivo = Convert.ToDouble(fl);
+            Console.Write("Введите дистанцию: ");
             string d = Console.ReadLine();
-            distance = Convert.ToDouble(d);
-            deliver_price = 0.5 * distance;
-            Console.WriteLine($"Delivered by ship\nPrice: {deliver_price} euro");
+            doroga = Convert.ToDouble(d);
+            dostavka_prica = 0.5 * doroga;
+            Console.WriteLine($"Доставка на корабле\nЦена: {dostavka_prica} в евро");
         }
     }
 
@@ -69,14 +69,14 @@ namespace _20_03_hm
     {
         public void ChooseLogistic()
         {
-            Console.WriteLine("It's road logistic");
+            Console.WriteLine("Дорожная логистика");
         }
     }
     class SeaLogistic : LogisticsApp
     {
         public void ChooseLogistic()
         {
-            Console.WriteLine("It's sea logistic");
+            Console.WriteLine("Морская логистика");
         }
     }
     internal class Program
